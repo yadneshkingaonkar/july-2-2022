@@ -21,6 +21,7 @@
           <include name="verifyreturngobackbtn"/>
           <include name="closeBrowser"/>
           <include name="clearObject"/>
+          <include name="verifyreturntoMessengerbtn"/>
           <include name="lounchbrowser"/>
           <include name="openRoomspage"/>
           <include name="logouttoApplication"/>
@@ -49,6 +50,7 @@
           <include name="verifyreturngobackbtn"/>
           <include name="closeBrowser"/>
           <include name="clearObject"/>
+          <include name="verifyreturntoMessengerbtn"/>
           <include name="lounchbrowser"/>
           <include name="openRoomspage"/>
           <include name="logouttoApplication"/>

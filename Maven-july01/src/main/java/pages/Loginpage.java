@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 public class Loginpage {
 	
 //variable - WebElement
-	@FindBy (xpath = "//input[@id='email']")
+	
+	
+	@FindBy (xpath = "//input[@aria-label='Email address or phone number']")
 	WebElement userName;
 	
 	@FindBy (xpath = "//input[@id='pass']")

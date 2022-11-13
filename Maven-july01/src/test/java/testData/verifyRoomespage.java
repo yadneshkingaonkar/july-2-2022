@@ -27,7 +27,7 @@ import setup.Base;
 import utils.Utility;
 
 
-	public class verifyRoomespage extends Base {
+	public class verifyRoomespage extends Base  {
 		
 		private WebDriver driver;   //var decleration
 		private Loginpage loginpage;
@@ -99,7 +99,7 @@ import utils.Utility;
 			String title = driver.getTitle();
 			//"https://www.messenger.com/"
 			Assert.assertEquals(url, "https://www.messenger.com" );
-			Assert.assertEquals(title,"Messenger" );
+			Assert.assertEquals(title,"Messenger" ); //Messenger
 			
 		}
 		
@@ -113,7 +113,7 @@ import utils.Utility;
 			String url = driver.getCurrentUrl();
 			String title = driver.getTitle();
 			//"https://www.messenger.com/help"  "Messenger Help Centre"
-			soft.assertEquals(url, "https://www.messenger/help");
+			soft.assertEquals(url, "https://www.messenger.com/help");
 			soft.assertEquals(title, "Messenger Help");
 			soft.assertAll();
 			

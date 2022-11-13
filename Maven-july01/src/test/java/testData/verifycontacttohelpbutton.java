@@ -7,9 +7,10 @@ import org.testng.Assert;
 import pages.Loginpage;
 import pages.Messengerpage;
 import pages.Roompages;
+import setup.Base;
 import utils.Utility;
 
-public class verifycontacttohelpbutton extends Utility  {
+public class verifycontacttohelpbutton extends Base  {
  public static void main(String[] args) {
 	 System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver_win32 (1)\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();

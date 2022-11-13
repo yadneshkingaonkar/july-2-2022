@@ -5,9 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import pages.Loginpage;
+import setup.Base;
 import utils.Utility;
 
-public class VerifyScrolldown extends Utility {
+public class VerifyScrolldown extends Base {
 public static void main(String[]args) throws InterruptedException {
 	System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver_win32 (1)\\chromedriver.exe");
 	WebDriver driver = new ChromeDriver();

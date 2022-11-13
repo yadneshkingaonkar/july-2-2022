@@ -7,9 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.Loginpage;
 import pages.Messengerpage;
 import pages.Roompages;
+import setup.Base;
 import utils.Utility;
 
-public class verifyreturntomessengerbutton extends Utility   {
+public class verifyreturntomessengerbutton extends Base   {
 
 	public static void main(String[] args) throws InterruptedException {
 		

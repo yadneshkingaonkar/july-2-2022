@@ -1,9 +1,12 @@
 package testData;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -18,6 +21,7 @@ import pages.Loginpage;
 import pages.Messengerpage;
 import pages.Roompages;
 import setup.Base;
+import utils.Utility;
 
 public class verifyHomepage extends Base {
 
@@ -27,6 +31,7 @@ public class verifyHomepage extends Base {
 		private Messengerpage messengerpage;
 		private Roompages roompages;
 		private SoftAssert soft;
+		private int testID;
 		
 		@Parameters ("browser")
 		@BeforeTest
@@ -41,7 +46,7 @@ public class verifyHomepage extends Base {
 			
 			if(BrowserName.equals("Edge"))
 			{	
-			System.setProperty("webdriver.edge.driver", "D:\\Selenium\\edgedriver_win64\\msedgedriver.exe");
+			//System.setProperty("webdriver.edge.driver", "D:\\Selenium\\edgedriver_win64\\msedgedriver.exe");
 			driver = openEdgebrowser();
 			
 			}
@@ -51,8 +56,14 @@ public class verifyHomepage extends Base {
 		}
 		
 		@BeforeClass
-		public void createPOMobjects() {
+		public void createPOMobjects() throws EncryptedDocumentException, IOException {
 			loginpage = new Loginpage(driver);
+			String data = Utility.getdataFromExcelsheet("Data", 1, 1);
+			loginpage.sendUsername(data);
+			
+			 data = Utility.getdataFromExcelsheet("Data", 1, 2);
+			 loginpage.sendpassword(data);
+			 
 			messengerpage = new Messengerpage(driver);
 			roompages = new Roompages(driver);
 			
@@ -96,15 +107,19 @@ public class verifyHomepage extends Base {
 			String url = driver.getCurrentUrl();
 			String title = driver.getTitle();
 			//"https://www.messenger.com/help"  "Messenger Help Centre"
-			soft.assertEquals(url, "https://www.messenger/help");
-			soft.assertEquals(title, "Messenger Help");
+			soft.assertEquals(url, "https://www.messenger.com/help");
+			soft.assertEquals(title, "Messenger Help Centre");
 			soft.assertAll();
 			
 		}
 			
 		
 		@AfterMethod
-		public void logouttoApplication() {
+		public void logouttoApplication(ITestResult result) throws IOException {
+			
+			if(ITestResult.FAILURE == result.getStatus()) {
+				Utility.capcturescreenshot(testID, driver);  //faild testcase ss
+			}
 			System.out.println("after method");
 			System.out.println("logout");
 		}
