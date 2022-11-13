@@ -14,12 +14,11 @@ public class Base {
 		return driver;
 		
 	}
-	public static WebDriver openEdgebrowser() {
-	    System.setProperty("webdriver.edge.driver", "D:\\Selenium\\edgedriver_win64\\msedgedriver.exe");
-			WebDriver driver = new EdgeDriver();
-			return driver;
+	
 			
-		}
+		//jdhudbhcbhc
+	//rjfjjr
+
 	
 //	public static WebDriver openEdgebrowser() {
 //	    System.setProperty("webdriver.edge.driver", "D:\\Selenium\\edgedriver_win64\\msedgedriver.exe");
