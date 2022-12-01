@@ -15,10 +15,10 @@ public class TestNg {
 			System.out.println("before class");
 		}
 		
-		@BeforeMethod
-		public void beforemethod() {
-			System.out.println("before method");
-		}
+// 		@BeforeMethod
+// 		public void beforemethod() {
+// 			System.out.println("before method");
+// 		}
 		
 		
 		
